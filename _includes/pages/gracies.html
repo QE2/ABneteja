@@ -1,0 +1,9 @@
+{%- assign L = site.data.i18n[page.lang] -%}
+{%- assign inici = site.data.pages | where: "ref", "home" | first -%}
+<section class="portada portada--curta">
+  <div class="embolcall">
+    <h1 class="portada__titol">{{ L.gracies.titol }}</h1>
+    <p class="portada__entradeta">{{ L.gracies.text }}</p>
+    <p><a class="boto" href="{% if page.lang == 'es' %}{{ inici.es }}{% else %}{{ inici.ca }}{% endif %}">{{ L.ui.tornar }}</a></p>
+  </div>
+</section>

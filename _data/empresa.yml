@@ -1,0 +1,18 @@
+# Font única de veritat per a totes les dades de contacte i identitat.
+# Canviar aquí, es propaga a tot el lloc.
+
+nom:          "ABneteja"
+nom_legal:    "ABneteja"          # ← ajustar quan canviï la forma jurídica
+nif:          "X9750536P"         # ← obligatori a l'avís legal (LSSI-CE art. 10)
+email:        "info@abneteja.com"
+telefon:      "600 000 000"       # ← PENDENT: posar el número real
+telefon_tel:  "+34600000000"      # ← format per a l'enllaç tel:
+poblacio:     "Molins de Rei"
+comarca:      "Baix Llobregat"
+provincia:    "Barcelona"
+
+# Formspree: substituir XXXXXXXX per l'ID del formulari
+formspree_id: "XXXXXXXX"
+
+# Perfils externs (deixar buit si encara no existeix)
+google_business: ""

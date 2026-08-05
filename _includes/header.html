@@ -1,0 +1,43 @@
+{%- assign L = site.data.i18n[page.lang] -%}
+{%- assign refs = "home,serveis,perque,zona,contacte" | split: "," -%}
+{%- assign inici = site.data.pages | where: "ref", "home" | first -%}
+{%- assign parell = site.data.pages | where: "ref", page.ref | first -%}
+<header class="capcalera">
+  <div class="embolcall capcalera__interior">
+
+    <a class="marca" href="{% if page.lang == 'es' %}{{ inici.es }}{% else %}{{ inici.ca }}{% endif %}">
+      <img class="marca__logo" src="/assets/img/logo-abneteja.svg" alt="ABneteja" width="120" height="130">
+      <span class="marca__text">
+        <span class="marca__nom">ABneteja</span>
+        <span class="marca__lema">{{ L.ui.area }} · {{ site.data.empresa.comarca }}</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-principal">
+      <span class="nav-toggle__barres" aria-hidden="true"></span>
+      <span class="visualment-ocult">{{ L.nav.menu }}</span>
+    </button>
+
+    <nav class="nav" id="nav-principal" aria-label="{{ L.nav.menu }}">
+      <ul class="nav__llista">
+        {%- for r in refs %}
+        {%- assign p = site.data.pages | where: "ref", r | first %}
+        {%- if page.lang == "es" %}{% assign href = p.es %}{% else %}{% assign href = p.ca %}{% endif %}
+        <li>
+          <a class="nav__enllac{% if page.ref == r %} is-actiu{% endif %}"
+             href="{{ href }}"{% if page.ref == r %} aria-current="page"{% endif %}>{{ L.nav[r] }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+
+      <div class="nav__accions">
+        <a class="idioma"
+           href="{% if page.lang == 'es' %}{{ parell.ca }}{% else %}{{ parell.es }}{% endif %}"
+           hreflang="{{ L.altra_codi }}"
+           lang="{{ L.altra_codi }}">{{ L.altra_nom }}</a>
+        <a class="boto boto--petit" href="{% assign c = site.data.pages | where: 'ref', 'contacte' | first %}{% if page.lang == 'es' %}{{ c.es }}{% else %}{{ c.ca }}{% endif %}">{{ L.ui.pressupost }}</a>
+      </div>
+    </nav>
+
+  </div>
+</header>

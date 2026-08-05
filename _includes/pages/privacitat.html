@@ -1,0 +1,72 @@
+{%- assign L = site.data.i18n[page.lang] -%}
+{%- assign E = site.data.empresa -%}
+<section class="portada portada--curta">
+  <div class="embolcall">
+    <p class="eyebrow">{{ L.privacitat.eyebrow }}</p>
+    <h1 class="portada__titol">{{ L.privacitat.titol }}</h1>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="embolcall prosa prosa--legal">
+  {%- if page.lang == "es" %}
+    <h2>Responsable del tratamiento</h2>
+    <p>{{ E.nom_legal }}, NIF {{ E.nif }}, con correo de contacto <a href="mailto:{{ E.email }}">{{ E.email }}</a>.</p>
+
+    <h2>Qué datos tratamos y con qué finalidad</h2>
+    <p>Tratamos únicamente los datos que usted nos facilita a través del formulario de contacto o al escribirnos o llamarnos: nombre, comunidad o empresa, correo electrónico, teléfono, población y el contenido de su mensaje. La finalidad es responder a su consulta y, si procede, elaborar y enviarle un presupuesto.</p>
+    <p>No elaboramos perfiles ni tomamos decisiones automatizadas. No enviamos comunicaciones comerciales a quien no las haya solicitado.</p>
+
+    <h2>Base jurídica</h2>
+    <p>El consentimiento que usted otorga al enviar el formulario, y la aplicación de medidas precontractuales a petición suya (artículo 6.1.a y 6.1.b del Reglamento (UE) 2016/679, RGPD).</p>
+
+    <h2>Conservación</h2>
+    <p>Conservamos los datos mientras dure la relación y, después, durante los plazos legalmente exigibles. Si la consulta no da lugar a ninguna contratación, los eliminamos transcurrido un año.</p>
+
+    <h2>Destinatarios y encargados del tratamiento</h2>
+    <p>No cedemos sus datos a terceros salvo obligación legal. Para el funcionamiento del sitio y del correo utilizamos los siguientes proveedores, que actúan como encargados del tratamiento:</p>
+    <ul>
+      <li><strong>Formspree, Inc.</strong> (Estados Unidos): procesamiento de los envíos del formulario de contacto.</li>
+      <li><strong>GitHub, Inc.</strong> (Estados Unidos): alojamiento del sitio web estático.</li>
+      <li><strong>Zoho Corporation</strong> (Unión Europea): servicio de correo electrónico.</li>
+    </ul>
+    <p>Las transferencias internacionales de datos que ello comporta se amparan en las garantías previstas en el capítulo V del RGPD.</p>
+
+    <h2>Cookies</h2>
+    <p>Este sitio no utiliza cookies propias ni de terceros con finalidades analíticas, publicitarias ni de perfilado.</p>
+
+    <h2>Sus derechos</h2>
+    <p>Puede solicitar el acceso, la rectificación, la supresión, la limitación del tratamiento, la portabilidad y la oposición escribiendo a <a href="mailto:{{ E.email }}">{{ E.email }}</a>. También puede retirar su consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento previo.</p>
+    <p>Si considera que no hemos atendido correctamente sus derechos, puede presentar una reclamación ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" rel="noopener">www.aepd.es</a>).</p>
+  {%- else %}
+    <h2>Responsable del tractament</h2>
+    <p>{{ E.nom_legal }}, NIF {{ E.nif }}, amb correu de contacte <a href="mailto:{{ E.email }}">{{ E.email }}</a>.</p>
+
+    <h2>Quines dades tractem i amb quina finalitat</h2>
+    <p>Tractem únicament les dades que ens faciliteu a través del formulari de contacte o en escriure'ns o trucar-nos: nom, comunitat o empresa, correu electrònic, telèfon, població i el contingut del vostre missatge. La finalitat és respondre la vostra consulta i, si escau, elaborar-vos i enviar-vos un pressupost.</p>
+    <p>No elaborem perfils ni prenem decisions automatitzades. No enviem comunicacions comercials a qui no les hagi sol·licitat.</p>
+
+    <h2>Base jurídica</h2>
+    <p>El consentiment que atorgueu en enviar el formulari, i l'aplicació de mesures precontractuals a petició vostra (article 6.1.a i 6.1.b del Reglament (UE) 2016/679, RGPD).</p>
+
+    <h2>Conservació</h2>
+    <p>Conservem les dades mentre duri la relació i, després, durant els terminis legalment exigibles. Si la consulta no dona lloc a cap contractació, les eliminem passat un any.</p>
+
+    <h2>Destinataris i encarregats del tractament</h2>
+    <p>No cedim les vostres dades a tercers llevat d'obligació legal. Per al funcionament del lloc i del correu fem servir els proveïdors següents, que actuen com a encarregats del tractament:</p>
+    <ul>
+      <li><strong>Formspree, Inc.</strong> (Estats Units): processament dels enviaments del formulari de contacte.</li>
+      <li><strong>GitHub, Inc.</strong> (Estats Units): allotjament del lloc web estàtic.</li>
+      <li><strong>Zoho Corporation</strong> (Unió Europea): servei de correu electrònic.</li>
+    </ul>
+    <p>Les transferències internacionals de dades que això comporta s'emparen en les garanties previstes al capítol V del RGPD.</p>
+
+    <h2>Galetes</h2>
+    <p>Aquest lloc no utilitza galetes pròpies ni de tercers amb finalitats analítiques, publicitàries ni de perfilat.</p>
+
+    <h2>Els vostres drets</h2>
+    <p>Podeu sol·licitar l'accés, la rectificació, la supressió, la limitació del tractament, la portabilitat i l'oposició escrivint a <a href="mailto:{{ E.email }}">{{ E.email }}</a>. També podeu retirar el consentiment en qualsevol moment, sense que això afecti la licitud del tractament anterior.</p>
+    <p>Si considereu que no hem atès correctament els vostres drets, podeu presentar una reclamació davant l'Agència Espanyola de Protecció de Dades (<a href="https://www.aepd.es" rel="noopener">www.aepd.es</a>).</p>
+  {%- endif %}
+  </div>
+</section>

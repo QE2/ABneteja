@@ -1,37 +1,39 @@
-# Ajustes del sitio. Archivo _config.yml
-title: "Servicios de Limpieza Profesional | AB Limpieza"
-description: "AB Limpieza ofrece servicios de limpieza profesional en el Baix Llobregat, Molins de Rei y alrededores."
-baseurl: "" # Si el sitio web está en un subdirectorio, como p. ej. "/blog"
-url: "https://webABlimpieza.com.github.io" # La URL de su sitio sin el subdirectorio
-author: "<a href='https://www.qe2computing.com/'>QE2 computing</a>"
+# ─────────────────────────────────────────────────────────────
+#  ABneteja — configuració del lloc
+#  Català com a llengua arrel (/), castellà a /es/
+# ─────────────────────────────────────────────────────────────
 
-# Configuración
+title:       "ABneteja"
+description: "Neteja professional per a comunitats de propietaris, oficines, clíniques i locals comercials al Baix Llobregat."
+url:         "https://abneteja.com"
+baseurl:     ""
+
+lang_default: ca
+
 markdown: kramdown
-# theme: minima # Cambie el tema si desea usar uno diferente
-paginate: 5
-
-# Permalinks
-permalink: /:categories/:title.html
-
-# Plugins
 plugins:
-  - jekyll-feed
   - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-paginate
-  - jekyll-archives
-  - jekyll-admin
 
-# Optional settings
-timezone: "Europe/Madrid" # Ajuste según su zona horaria
-language: "es"
+timezone: "Europe/Madrid"
 
-# Exclude from processing
+# Valors per defecte: tota pàgina usa el layout "page" i, si no diu
+# res, s'assumeix català.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+      lang: ca
+  - scope:
+      path: "es"
+    values:
+      layout: page
+      lang: es
+
 exclude:
   - Gemfile
   - Gemfile.lock
+  - README.md
+  - vendor
+  - .jekyll-cache
   - node_modules
-  - vendor/bundle
-  - vendor/cache
-  - vendor/gems
-  - vendor/ruby

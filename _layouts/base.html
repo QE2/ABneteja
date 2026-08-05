@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang_default }}">
+{% include head.html %}
+<body>
+  <a class="skip" href="#contingut">{{ site.data.i18n[page.lang].nav.salta }}</a>
+  {% include header.html %}
+  <main id="contingut">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <script>
+    (function () {
+      var b = document.querySelector('.nav-toggle');
+      var n = document.getElementById('nav-principal');
+      if (!b || !n) return;
+      b.addEventListener('click', function () {
+        var obert = b.getAttribute('aria-expanded') === 'true';
+        b.setAttribute('aria-expanded', String(!obert));
+        n.classList.toggle('is-obert', !obert);
+      });
+    })();
+  </script>
+</body>
+</html>

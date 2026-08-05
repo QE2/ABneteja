@@ -1,0 +1,15 @@
+{%- assign L = site.data.i18n[page.lang] -%}
+{%- assign E = site.data.empresa -%}
+{%- assign c = site.data.pages | where: "ref", "contacte" | first -%}
+<section class="cta">
+  <div class="embolcall cta__interior">
+    <div>
+      <h2 class="cta__titol">{{ include.titol }}</h2>
+      <p class="cta__text">{{ include.text }}</p>
+    </div>
+    <div class="cta__accions">
+      <a class="boto boto--clar" href="{% if page.lang == 'es' %}{{ c.es }}{% else %}{{ c.ca }}{% endif %}">{{ L.ui.pressupost }}</a>
+      <a class="cta__tel" href="tel:{{ E.telefon_tel }}">{{ L.ui.truca }} · {{ E.telefon }}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+Posar aquí els fitxers .woff2, amb aquests noms exactes (els espera main.css):
+
+  pt-sans-narrow-700.woff2
+  montserrat-400.woff2
+  montserrat-600.woff2
+
+Totes dues famílies són OFL. Es poden obtenir de google-webfonts-helper
+(subconjunt latin + latin-ext, format woff2) o del paquet de Google Fonts.
+
+Autoallotjar-les evita la crida a fonts.gstatic.com, que a la UE
+implica transferir l'adreça IP de la persona visitant a un tercer.

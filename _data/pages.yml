@@ -1,0 +1,28 @@
+# Mapa de correspondències entre versions lingüístiques.
+# Alimenta el selector d'idioma i les etiquetes hreflang.
+# Si afegeixes una pàgina, afegeix-la aquí també.
+
+- ref: home
+  ca: /
+  es: /es/
+- ref: serveis
+  ca: /serveis/
+  es: /es/servicios/
+- ref: perque
+  ca: /per-que-abneteja/
+  es: /es/por-que-abneteja/
+- ref: zona
+  ca: /zona-de-servei/
+  es: /es/zona-de-servicio/
+- ref: contacte
+  ca: /contacte/
+  es: /es/contacto/
+- ref: gracies
+  ca: /contacte/gracies/
+  es: /es/contacto/gracias/
+- ref: legal
+  ca: /avis-legal/
+  es: /es/aviso-legal/
+- ref: privacitat
+  ca: /privacitat/
+  es: /es/privacidad/

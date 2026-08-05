@@ -1,0 +1,74 @@
+# Catàleg de serveis. Cada entrada porta les dues llengües juntes
+# per evitar que es desincronitzin.
+
+- id: comunitats
+  destacat: true
+  ca:
+    nom: "Comunitats de propietaris"
+    desc: "Escales, vestíbuls, ascensors, garatges i zones comunes. Freqüència pactada amb la comunitat i full de servei signat a cada visita."
+  es:
+    nom: "Comunidades de propietarios"
+    desc: "Escaleras, vestíbulos, ascensores, garajes y zonas comunes. Frecuencia pactada con la comunidad y parte de servicio firmado en cada visita."
+
+- id: oficines
+  destacat: true
+  ca:
+    nom: "Oficines i despatxos"
+    desc: "Gestories, advocats, notaries i oficines. Treballem fora d'horari d'atenció perquè no us interrompem la jornada."
+  es:
+    nom: "Oficinas y despachos"
+    desc: "Gestorías, abogados, notarías y oficinas. Trabajamos fuera del horario de atención para no interrumpir vuestra jornada."
+
+- id: cliniques
+  destacat: true
+  ca:
+    nom: "Clíniques i centres sanitaris"
+    desc: "Consultoris, centres de fisioteràpia i farmàcies. Protocols de desinfecció i personal fix, sempre les mateixes persones."
+  es:
+    nom: "Clínicas y centros sanitarios"
+    desc: "Consultorios, centros de fisioterapia y farmacias. Protocolos de desinfección y personal fijo, siempre las mismas personas."
+
+- id: naus
+  destacat: true
+  ca:
+    nom: "Naus i magatzems"
+    desc: "Neteja periòdica de zones de producció, oficines annexes i serveis. Dimensionem l'equip segons la superfície."
+  es:
+    nom: "Naves y almacenes"
+    desc: "Limpieza periódica de zonas de producción, oficinas anexas y aseos. Dimensionamos el equipo según la superficie."
+
+- id: locals
+  destacat: true
+  ca:
+    nom: "Locals comercials"
+    desc: "Botigues, showrooms i establiments a peu de carrer. Horaris de vall o abans d'obrir."
+  es:
+    nom: "Locales comerciales"
+    desc: "Tiendas, showrooms y establecimientos a pie de calle. Horarios valle o antes de abrir."
+
+- id: tecnica
+  destacat: true
+  ca:
+    nom: "Neteja tècnica"
+    desc: "Vidres de façana i aparadors, rètols, tendals i persianes metàl·liques. Fins a l'alçada que permet una feina segura."
+  es:
+    nom: "Limpieza técnica"
+    desc: "Cristales de fachada y escaparates, rótulos, toldos y persianas metálicas. Hasta la altura que permite un trabajo seguro."
+
+- id: pisos
+  destacat: false
+  ca:
+    nom: "Pisos per a venda o lloguer"
+    desc: "Buidatge i posada a punt d'habitatges per a immobiliàries i administradors abans d'ensenyar-los."
+  es:
+    nom: "Pisos para venta o alquiler"
+    desc: "Vaciado y puesta a punto de viviendas para inmobiliarias y administradores antes de enseñarlos."
+
+- id: fi-obra
+  destacat: false
+  ca:
+    nom: "Final d'obra"
+    desc: "Retirada de restes, pols fina i posada a punt després d'una reforma o d'una intervenció a la finca."
+  es:
+    nom: "Final de obra"
+    desc: "Retirada de restos, polvo fino y puesta a punto tras una reforma o una intervención en la finca."

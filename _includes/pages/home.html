@@ -1,0 +1,77 @@
+{%- assign L = site.data.i18n[page.lang] -%}
+{%- assign T = L.home -%}
+{%- assign s = site.data.pages | where: "ref", "serveis" | first -%}
+{%- assign z = site.data.pages | where: "ref", "zona" | first -%}
+
+<section class="hero">
+  <div class="embolcall hero__interior">
+    <p class="eyebrow">{{ T.eyebrow }}</p>
+    <h1 class="hero__titol">{{ T.titol }}</h1>
+    <p class="hero__entradeta">{{ T.entradeta }}</p>
+    <div class="hero__accions">
+      {%- assign c = site.data.pages | where: "ref", "contacte" | first %}
+      <a class="boto" href="{% if page.lang == 'es' %}{{ c.es }}{% else %}{{ c.ca }}{% endif %}">{{ L.ui.pressupost }}</a>
+      <a class="enllac-suau" href="{% if page.lang == 'es' %}{{ s.es }}{% else %}{{ s.ca }}{% endif %}">{{ L.ui.veure_tots }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccio seccio--credencials">
+  <div class="embolcall">
+    <h2 class="seccio__titol">{{ T.credencials_titol }}</h2>
+    <ul class="credencials">
+      {%- for c in T.credencials %}
+      <li class="credencial">
+        <h3 class="credencial__titol">{{ c.titol }}</h3>
+        <p class="credencial__text">{{ c.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="embolcall">
+    <h2 class="seccio__titol">{{ T.serveis_titol }}</h2>
+    <p class="seccio__entradeta">{{ T.serveis_text }}</p>
+    <ul class="serveis">
+      {%- for s in site.data.serveis %}{% if s.destacat %}
+      <li class="servei">
+        <h3 class="servei__nom">{{ s[page.lang].nom }}</h3>
+        <p class="servei__desc">{{ s[page.lang].desc }}</p>
+      </li>
+      {%- endif %}{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="seccio seccio--proces">
+  <div class="embolcall">
+    <h2 class="seccio__titol">{{ T.proces_titol }}</h2>
+    <p class="seccio__entradeta">{{ T.proces_text }}</p>
+    <ol class="proces">
+      {%- for p in T.proces %}
+      <li class="pas">
+        <span class="pas__num" aria-hidden="true">{{ forloop.index }}</span>
+        <h3 class="pas__titol">{{ p.titol }}</h3>
+        <p class="pas__text">{{ p.text }}</p>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="embolcall">
+    <h2 class="seccio__titol">{{ T.zona_titol }}</h2>
+    <p class="seccio__entradeta">{{ T.zona_text }}</p>
+    <ul class="municipis">
+      {%- for m in site.data.zones.nucli %}
+      <li>{{ m }}</li>
+      {%- endfor %}
+    </ul>
+    <p><a class="enllac-suau" href="{% if page.lang == 'es' %}{{ z.es }}{% else %}{{ z.ca }}{% endif %}">{{ L.zona.titol }} →</a></p>
+  </div>
+</section>
+
+{% include cta.html titol=T.cta_titol text=T.cta_text %}

@@ -1,0 +1,25 @@
+{%- assign L = site.data.i18n[page.lang] -%}
+{%- assign T = L.perque -%}
+
+<section class="portada">
+  <div class="embolcall">
+    <p class="eyebrow">{{ T.eyebrow }}</p>
+    <h1 class="portada__titol">{{ T.titol }}</h1>
+    <p class="portada__entradeta">{{ T.entradeta }}</p>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="embolcall">
+    <ul class="blocs">
+      {%- for b in T.blocs %}
+      <li class="bloc">
+        <h2 class="bloc__titol">{{ b.titol }}</h2>
+        <p class="bloc__text">{{ b.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{% include cta.html titol=T.cta_titol text=T.cta_text %}

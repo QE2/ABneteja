@@ -1,0 +1,36 @@
+{% assign L = site.data.i18n[page.lang] %}
+{% assign parell = site.data.pages | where: "ref", page.ref | first %}
+{% assign M = L[page.ref] %}
+{% if page.lang == "es" %}{% assign ruta = parell.es %}{% else %}{% assign ruta = parell.ca %}{% endif %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ M.meta_title | default: site.title }}</title>
+  <meta name="description" content="{{ M.meta_desc | default: site.description }}">
+  <meta name="theme-color" content="#235858">
+  {% if page.noindex %}<meta name="robots" content="noindex, follow">{% endif %}
+
+  <link rel="canonical" href="{{ site.url }}{{ ruta }}">
+  <link rel="alternate" hreflang="ca" href="{{ site.url }}{{ parell.ca }}">
+  <link rel="alternate" hreflang="es" href="{{ site.url }}{{ parell.es }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ parell.ca }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.data.empresa.nom }}">
+  <meta property="og:title" content="{{ M.meta_title | default: site.title }}">
+  <meta property="og:description" content="{{ M.meta_desc | default: site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ ruta }}">
+  <meta property="og:locale" content="{% if page.lang == 'es' %}es_ES{% else %}ca_ES{% endif %}">
+  <meta property="og:image" content="{{ site.url }}/assets/img/og-abneteja.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+  <link rel="preload" href="/assets/fonts/pt-sans-narrow-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/montserrat-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  {% include seo.html %}
+</head>

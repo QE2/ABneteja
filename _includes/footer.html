@@ -1,0 +1,41 @@
+{%- assign L = site.data.i18n[page.lang] -%}
+{%- assign E = site.data.empresa -%}
+{%- assign legal = site.data.pages | where: "ref", "legal" | first -%}
+{%- assign priv = site.data.pages | where: "ref", "privacitat" | first -%}
+<footer class="peu">
+  <div class="embolcall peu__graella">
+
+    <div class="peu__bloc">
+      <p class="peu__marca">ABneteja</p>
+      <p class="peu__lema">{{ L.peu.claim }}</p>
+    </div>
+
+    <div class="peu__bloc">
+      <p class="peu__titol">{{ L.nav.contacte }}</p>
+      <ul class="peu__llista">
+        <li><a href="mailto:{{ E.email }}">{{ E.email }}</a></li>
+        <li><a href="tel:{{ E.telefon_tel }}">{{ E.telefon }}</a></li>
+      </ul>
+    </div>
+
+    <div class="peu__bloc">
+      <p class="peu__titol">{{ L.ui.base }}</p>
+      <ul class="peu__llista">
+        <li>{{ E.poblacio }} ({{ E.provincia }})</li>
+        <li>{{ E.comarca }}</li>
+      </ul>
+    </div>
+
+    <div class="peu__bloc">
+      <p class="peu__titol">Legal</p>
+      <ul class="peu__llista">
+        <li><a href="{% if page.lang == 'es' %}{{ legal.es }}{% else %}{{ legal.ca }}{% endif %}">{{ L.peu.legal }}</a></li>
+        <li><a href="{% if page.lang == 'es' %}{{ priv.es }}{% else %}{{ priv.ca }}{% endif %}">{{ L.peu.privacitat }}</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="embolcall peu__baix">
+    <p>© {{ site.time | date: "%Y" }} {{ E.nom_legal }} · {{ E.nif }} · {{ L.peu.drets }}</p>
+  </div>
+</footer>

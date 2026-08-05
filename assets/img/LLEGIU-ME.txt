@@ -1,0 +1,9 @@
+Fitxers que espera el lloc:
+
+  logo-abneteja.svg          Logotip vectoritzat, versió teal — capçalera
+  logo-abneteja.png          Versió PNG per a JSON-LD (mín. 600 px d'ample)
+  favicon.svg                Icona del navegador
+  apple-touch-icon.png       180 × 180 px
+  og-abneteja.png            1200 × 630 px, per a WhatsApp i xarxes
+
+logo-abneteja-carboni.png és la versió negra que ja teníeu, com a punt de partida.

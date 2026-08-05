@@ -1,0 +1,36 @@
+{%- assign L = site.data.i18n[page.lang] -%}
+{%- assign T = L.zona -%}
+
+<section class="portada">
+  <div class="embolcall">
+    <p class="eyebrow">{{ T.eyebrow }}</p>
+    <h1 class="portada__titol">{{ T.titol }}</h1>
+    <p class="portada__entradeta">{{ T.entradeta }}</p>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="embolcall">
+    <h2 class="seccio__titol">{{ T.nucli_titol }}</h2>
+    <p class="seccio__entradeta">{{ T.nucli_text }}</p>
+    <ul class="municipis municipis--destacats">
+      {%- for m in site.data.zones.nucli %}<li>{{ m }}</li>{% endfor %}
+    </ul>
+
+    <h2 class="seccio__titol">{{ T.extensa_titol }}</h2>
+    <p class="seccio__entradeta">{{ T.extensa_text }}</p>
+    <ul class="municipis">
+      {%- for m in site.data.zones.extensa %}<li>{{ m }}</li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="embolcall prosa">
+    <h2>{{ T.fora_titol }}</h2>
+    <p>{{ T.fora_text }}</p>
+    <p class="nota">{{ T.sense_local }}</p>
+  </div>
+</section>
+
+{% include cta.html titol=L.home.cta_titol text=L.home.cta_text %}

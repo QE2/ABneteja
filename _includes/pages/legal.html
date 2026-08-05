@@ -1,0 +1,72 @@
+{%- assign L = site.data.i18n[page.lang] -%}
+{%- assign E = site.data.empresa -%}
+<section class="portada portada--curta">
+  <div class="embolcall">
+    <p class="eyebrow">{{ L.legal.eyebrow }}</p>
+    <h1 class="portada__titol">{{ L.legal.titol }}</h1>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="embolcall prosa prosa--legal">
+  {%- if page.lang == "es" %}
+    <h2>Titular del sitio web</h2>
+    <p>En cumplimiento del artículo 10 de la Ley 34/2002, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE), se informa de los datos del titular de este sitio web:</p>
+    <ul>
+      <li><strong>Denominación:</strong> {{ E.nom_legal }}</li>
+      <li><strong>NIF:</strong> {{ E.nif }}</li>
+      <li><strong>Domicilio:</strong> <!-- PENDIENTE: domicilio fiscal completo --> {{ E.poblacio }} ({{ E.provincia }})</li>
+      <li><strong>Correo electrónico:</strong> <a href="mailto:{{ E.email }}">{{ E.email }}</a></li>
+      <li><strong>Teléfono:</strong> {{ E.telefon }}</li>
+      <li><strong>Actividad:</strong> servicios de limpieza</li>
+    </ul>
+
+    <h2>Objeto</h2>
+    <p>Este sitio web tiene una finalidad informativa: dar a conocer los servicios de {{ E.nom }} y permitir el contacto con la empresa. No se realizan ventas ni contrataciones en línea.</p>
+
+    <h2>Condiciones de uso</h2>
+    <p>El acceso al sitio es libre y gratuito. La persona usuaria se compromete a hacer un uso adecuado de los contenidos y a no emplearlos con fines ilícitos o lesivos para terceros.</p>
+
+    <h2>Propiedad intelectual e industrial</h2>
+    <p>Los textos, el logotipo, las imágenes y el diseño de este sitio son titularidad de {{ E.nom_legal }} o se utilizan con la autorización correspondiente. Su reproducción o distribución sin autorización previa no está permitida.</p>
+
+    <h2>Responsabilidad</h2>
+    <p>{{ E.nom_legal }} procura que la información publicada sea correcta y esté actualizada, pero no garantiza la ausencia de errores. Los precios y las condiciones de los servicios se concretan siempre en un presupuesto individual por escrito.</p>
+
+    <h2>Enlaces</h2>
+    <p>Este sitio puede contener enlaces a páginas de terceros. {{ E.nom_legal }} no se responsabiliza de sus contenidos ni de sus políticas de privacidad.</p>
+
+    <h2>Legislación aplicable</h2>
+    <p>Esta relación se rige por la legislación española. Para cualquier controversia serán competentes los juzgados y tribunales que correspondan según la normativa vigente.</p>
+  {%- else %}
+    <h2>Titular del lloc web</h2>
+    <p>En compliment de l'article 10 de la Llei 34/2002, de serveis de la societat de la informació i de comerç electrònic (LSSI-CE), s'informa de les dades del titular d'aquest lloc web:</p>
+    <ul>
+      <li><strong>Denominació:</strong> {{ E.nom_legal }}</li>
+      <li><strong>NIF:</strong> {{ E.nif }}</li>
+      <li><strong>Domicili:</strong> <!-- PENDENT: domicili fiscal complet --> {{ E.poblacio }} ({{ E.provincia }})</li>
+      <li><strong>Correu electrònic:</strong> <a href="mailto:{{ E.email }}">{{ E.email }}</a></li>
+      <li><strong>Telèfon:</strong> {{ E.telefon }}</li>
+      <li><strong>Activitat:</strong> serveis de neteja</li>
+    </ul>
+
+    <h2>Objecte</h2>
+    <p>Aquest lloc web té una finalitat informativa: donar a conèixer els serveis d'{{ E.nom }} i permetre el contacte amb l'empresa. No s'hi fan vendes ni contractacions en línia.</p>
+
+    <h2>Condicions d'ús</h2>
+    <p>L'accés al lloc és lliure i gratuït. La persona usuària es compromet a fer un ús adequat dels continguts i a no emprar-los amb finalitats il·lícites o lesives per a tercers.</p>
+
+    <h2>Propietat intel·lectual i industrial</h2>
+    <p>Els textos, el logotip, les imatges i el disseny d'aquest lloc són titularitat d'{{ E.nom_legal }} o s'utilitzen amb l'autorització corresponent. No se'n permet la reproducció ni la distribució sense autorització prèvia.</p>
+
+    <h2>Responsabilitat</h2>
+    <p>{{ E.nom_legal }} procura que la informació publicada sigui correcta i estigui actualitzada, però no en garanteix l'absència d'errors. Els preus i les condicions dels serveis es concreten sempre en un pressupost individual per escrit.</p>
+
+    <h2>Enllaços</h2>
+    <p>Aquest lloc pot contenir enllaços a pàgines de tercers. {{ E.nom_legal }} no es responsabilitza dels seus continguts ni de les seves polítiques de privacitat.</p>
+
+    <h2>Legislació aplicable</h2>
+    <p>Aquesta relació es regeix per la legislació espanyola. Per a qualsevol controvèrsia seran competents els jutjats i tribunals que corresponguin segons la normativa vigent.</p>
+  {%- endif %}
+  </div>
+</section>

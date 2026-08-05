@@ -1,0 +1,98 @@
+{%- assign L = site.data.i18n[page.lang] -%}
+{%- assign T = L.contacte -%}
+{%- assign F = T.form -%}
+{%- assign E = site.data.empresa -%}
+{%- assign priv = site.data.pages | where: "ref", "privacitat" | first -%}
+{%- assign gr = site.data.pages | where: "ref", "gracies" | first -%}
+{%- if page.lang == "es" %}{% assign ruta_priv = priv.es %}{% assign ruta_gr = gr.es %}
+{%- else %}{% assign ruta_priv = priv.ca %}{% assign ruta_gr = gr.ca %}{% endif -%}
+
+<section class="portada">
+  <div class="embolcall">
+    <p class="eyebrow">{{ T.eyebrow }}</p>
+    <h1 class="portada__titol">{{ T.titol }}</h1>
+    <p class="portada__entradeta">{{ T.entradeta }}</p>
+  </div>
+</section>
+
+<section class="seccio">
+  <div class="embolcall contacte">
+
+    <div class="contacte__directe">
+      <p class="contacte__etiqueta">{{ L.ui.telefon }}</p>
+      <p class="contacte__valor"><a href="tel:{{ E.telefon_tel }}">{{ E.telefon }}</a></p>
+
+      <p class="contacte__etiqueta">{{ L.ui.correu }}</p>
+      <p class="contacte__valor"><a href="mailto:{{ E.email }}">{{ E.email }}</a></p>
+
+      <p class="contacte__etiqueta">{{ L.ui.base }}</p>
+      <p class="contacte__valor">{{ E.poblacio }} · {{ E.comarca }}</p>
+
+      <div class="prosa prosa--compacta">
+        <h2>{{ T.rapid_titol }}</h2>
+        <p>{{ T.rapid_text }}</p>
+        <ul>
+          {%- for i in T.rapid_llista %}<li>{{ i }}</li>{% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <form class="formulari"
+          action="https://formspree.io/f/{{ E.formspree_id }}"
+          method="POST">
+      <input type="hidden" name="_next" value="{{ site.url }}{{ ruta_gr }}">
+      <input type="hidden" name="_language" value="{{ page.lang }}">
+      <p class="parany" aria-hidden="true">
+        <label for="_gotcha">No omplir</label>
+        <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+      </p>
+
+      <p class="camp">
+        <label for="nom">{{ F.nom }} <span class="req" title="{{ F.obligatori }}">*</span></label>
+        <input type="text" id="nom" name="nom" required autocomplete="name">
+      </p>
+
+      <p class="camp">
+        <label for="entitat">{{ F.entitat }}</label>
+        <input type="text" id="entitat" name="entitat" placeholder="{{ F.entitat_ph }}" autocomplete="organization">
+      </p>
+
+      <div class="camp-parell">
+        <p class="camp">
+          <label for="email">{{ F.email }} <span class="req" title="{{ F.obligatori }}">*</span></label>
+          <input type="email" id="email" name="email" required autocomplete="email">
+        </p>
+        <p class="camp">
+          <label for="telefon">{{ F.telefon }}</label>
+          <input type="tel" id="telefon" name="telefon" autocomplete="tel">
+        </p>
+      </div>
+
+      <div class="camp-parell">
+        <p class="camp">
+          <label for="poblacio">{{ F.poblacio }}</label>
+          <input type="text" id="poblacio" name="poblacio" autocomplete="address-level2">
+        </p>
+        <p class="camp">
+          <label for="tipus">{{ F.tipus }}</label>
+          <select id="tipus" name="tipus">
+            {%- for o in F.tipus_opcions %}<option>{{ o }}</option>{% endfor %}
+          </select>
+        </p>
+      </div>
+
+      <p class="camp">
+        <label for="missatge">{{ F.missatge }} <span class="req" title="{{ F.obligatori }}">*</span></label>
+        <textarea id="missatge" name="missatge" rows="6" required placeholder="{{ F.missatge_ph }}"></textarea>
+      </p>
+
+      <p class="camp camp--consent">
+        <input type="checkbox" id="consent" name="consent" required value="si">
+        <label for="consent">{{ F.consent }} <a href="{{ ruta_priv }}">{{ F.consent_enllac }}</a>. <span class="req">*</span></label>
+      </p>
+
+      <p><button class="boto" type="submit">{{ F.enviar }}</button></p>
+    </form>
+
+  </div>
+</section>

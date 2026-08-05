@@ -1,0 +1,157 @@
+codi:        ca
+nom:         "Català"
+altra_codi:  es
+altra_nom:   "Castellano"
+
+nav:
+  salta:    "Vés al contingut"
+  home:     "Inici"
+  serveis:  "Serveis"
+  perque:   "Per què ABneteja"
+  zona:     "Zona de servei"
+  contacte: "Contacte"
+  menu:     "Menú"
+
+ui:
+  pressupost:   "Demana pressupost"
+  veure_tots:   "Veure tots els serveis"
+  truca:        "Truca'ns"
+  escriu:       "Escriu-nos"
+  tornar:       "Tornar a l'inici"
+  telefon:      "Telèfon"
+  correu:       "Correu"
+  base:         "Base"
+  area:         "Àrea de servei"
+
+peu:
+  claim:      "Neteja de qualitat i confiança, amb tots els requisits legals."
+  legal:      "Avís legal"
+  privacitat: "Privacitat"
+  drets:      "Tots els drets reservats."
+
+home:
+  meta_title: "Empresa de neteja al Baix Llobregat | ABneteja"
+  meta_desc:  "Neteja de comunitats de propietaris, oficines, clíniques, naus i locals al Baix Llobregat. Personal contractat en regla i assegurança de responsabilitat civil."
+  eyebrow:    "Molins de Rei · Baix Llobregat"
+  titol:      "Neteja professional per a comunitats, oficines i locals"
+  entradeta:  "Som un negoci familiar del Baix Llobregat. Poca gent, sempre la mateixa, i tots els papers en regla. Prou perquè un administrador ens pugui posar a la seva llista sense por."
+  credencials_titol: "El que us cal comprovar abans de contractar ningú"
+  credencials:
+    - titol: "Personal contractat en regla"
+      text:  "Sense subcontractes ni figures irregulars. Us diem qui entra a la finca i sempre és la mateixa persona."
+    - titol: "Assegurança de responsabilitat civil"
+      text:  "Vigent i acreditable. Us n'enviem el certificat amb el pressupost, sense haver-lo de demanar."
+    - titol: "Sense permanència"
+      text:  "No signeu cap compromís de durada. Si no us convenim, ho deixeu quan vulgueu. La confiança es demostra, no s'obliga."
+  serveis_titol: "Què netegem"
+  serveis_text:  "Tota mena de neteja que no requereixi maquinària industrial ni treballs en alçada per damunt del que es pot fer amb seguretat."
+  proces_titol:  "Com comencem"
+  proces_text:   "Quatre passos. Del primer al pressupost solen passar dos o tres dies."
+  proces:
+    - titol: "Ens truqueu o ens escriviu"
+      text:  "Ens dieu quin espai és i amb quina freqüència el voleu net."
+    - titol: "Us visitem"
+      text:  "Anem a veure-ho. Sense visita no hi ha pressupost seriós, i us ho volem fer bé."
+    - titol: "Pressupost tancat"
+      text:  "Per escrit, amb l'abast detallat i el certificat d'assegurança adjunt. Sense lletra petita."
+    - titol: "Primer servei"
+      text:  "Us presentem la persona que hi anirà. A partir d'aquí, full de servei signat a cada visita."
+  zona_titol: "On treballem"
+  zona_text:  "Sortim de Molins de Rei i cobrim bona part del Baix Llobregat. Si sou just al límit, pregunteu-ho igualment."
+  cta_titol:  "Demaneu-nos un pressupost"
+  cta_text:   "Us visitem sense cost i us el passem per escrit. Si teniu una comunitat o un local, digueu-nos els metres i el que hi ha, i anem de pressa."
+
+serveis:
+  meta_title: "Serveis de neteja | ABneteja"
+  meta_desc:  "Comunitats de propietaris, oficines, clíniques, naus, locals comercials i neteja tècnica de vidres i rètols al Baix Llobregat."
+  eyebrow:    "Serveis"
+  titol:      "Què netegem"
+  entradeta:  "Treballem per contracte periòdic i també per serveis puntuals. Dimensionem l'equip i el material segons el projecte."
+  limits_titol: "Un apunt honest"
+  limits_text:  "No fem treballs que requereixin especialitat tècnica, maquinària industrial de gran format o alçades on no puguem treballar amb seguretat. Si el que necessiteu queda fora, us ho direm de seguida en comptes de fer-vos perdre el temps."
+  particulars_titol: "I els habitatges particulars?"
+  particulars_text:  "Ens hi dediquem molt poc. La nostra organització està pensada per a contractes periòdics amb comunitats i negocis, i és on donem el millor servei."
+
+perque:
+  meta_title: "Per què ABneteja | Garanties i forma de treballar"
+  meta_desc:  "Personal contractat en regla, assegurança de responsabilitat civil vigent i cap compromís de permanència. Com treballem a ABneteja."
+  eyebrow:    "Per què ABneteja"
+  titol:      "Un equip petit que compleix"
+  entradeta:  "No som els més grans ni ho volem ser. El que oferim és que sabreu qui entra al vostre edifici, que està contractat com toca, i que si un dia no us convenim, marxem sense drama."
+  blocs:
+    - titol: "Sempre les mateixes persones"
+      text:  "En una comunitat o una clínica, la rotació de personal és el problema real: cada cara nova torna a començar de zero i cal tornar a explicar-ho tot. Aquí hi va sempre qui hi va. És l'avantatge de ser pocs."
+    - titol: "Tot en regla, i us ho podem ensenyar"
+      text:  "Contractes conformes a la normativa, altes a la Seguretat Social i assegurança de responsabilitat civil vigent. Us facilitem la documentació amb el pressupost. Per a un administrador de finques això no és un extra: és la condició per poder-nos proposar a una junta."
+    - titol: "Sense compromís de permanència"
+      text:  "No hi ha durada mínima ni penalització per marxar. És la manera més clara que tenim de dir que confiem en la feina que fem."
+    - titol: "Pressupost per escrit i abast tancat"
+      text:  "Detallem què inclou i què no. Res de tarifes generals: cada espai és diferent i el preu surt de la visita, no d'una taula."
+    - titol: "Català i castellà"
+      text:  "Us atenem i us documentem en la llengua que preferiu, també el pressupost i el full de servei."
+  cta_titol: "Voleu la documentació?"
+  cta_text:  "Demaneu-nos el dossier i el certificat d'assegurança. Us els enviem sense compromís."
+
+zona:
+  meta_title: "Zona de servei al Baix Llobregat | ABneteja"
+  meta_desc:  "Servei de neteja des de Molins de Rei a la major part del Baix Llobregat: Sant Feliu, Sant Just, Sant Joan Despí, Cornellà, Martorell i rodalies."
+  eyebrow:    "Zona de servei"
+  titol:      "On arribem"
+  entradeta:  "La nostra base és Molins de Rei. Treballem amb rutes per zona, i per això la proximitat ens permet mantenir el preu i complir els horaris."
+  nucli_titol:  "Zona principal"
+  nucli_text:   "Aquí hi som pràcticament cada dia."
+  extensa_titol: "També hi anem"
+  extensa_text:  "Amb servei regular, segons el volum i l'encaix a la ruta."
+  fora_titol: "Si no hi sou a la llista"
+  fora_text:  "Pregunteu-ho igualment. Fora del Baix Llobregat valorem cas per cas, sobretot si es tracta d'un contracte periòdic."
+  sense_local: "No tenim oficina oberta al públic: som un servei que es desplaça a casa vostra. Per veure l'espai, concertem visita."
+
+contacte:
+  meta_title: "Contacte i pressupost | ABneteja"
+  meta_desc:  "Demaneu pressupost de neteja per a la vostra comunitat, oficina o local al Baix Llobregat. Visita i pressupost sense cost."
+  eyebrow:    "Contacte"
+  titol:      "Demaneu pressupost"
+  entradeta:  "Expliqueu-nos què necessiteu i us responem el mateix dia laborable. La visita i el pressupost no tenen cost."
+  rapid_titol: "Si voleu una xifra ràpida"
+  rapid_text:  "Perquè us puguem orientar sense visita, ens va bé saber:"
+  rapid_llista:
+    - "Vidres i rètols: una fotografia i les mides (alt × ample) de la superfície."
+    - "Oficines, lavabos, cuines o magatzems: els metres quadrats, de quin espai es tracta i si hi ha mobiliari a part del propi de l'estança."
+    - "Comunitats: nombre de plantes, si hi ha ascensor i garatge, i quantes vegades per setmana."
+  form:
+    nom:        "Nom i cognoms"
+    entitat:    "Comunitat o empresa"
+    entitat_ph: "Opcional"
+    email:      "Correu electrònic"
+    telefon:    "Telèfon"
+    poblacio:   "Població"
+    tipus:      "Quin espai és"
+    tipus_opcions:
+      - "Comunitat de propietaris"
+      - "Oficina o despatx"
+      - "Clínica o centre sanitari"
+      - "Nau o magatzem"
+      - "Local comercial"
+      - "Vidres, rètols o neteja tècnica"
+      - "Altres"
+    missatge:    "Què necessiteu"
+    missatge_ph: "Metres quadrats, freqüència, horaris que us van bé…"
+    consent:     "He llegit i accepto la"
+    consent_enllac: "política de privacitat"
+    enviar:      "Enviar la sol·licitud"
+    obligatori:  "Camp obligatori"
+
+gracies:
+  meta_title: "Missatge enviat | ABneteja"
+  titol:      "Rebut, gràcies"
+  text:       "Us responem el mateix dia laborable. Si teniu pressa, truqueu-nos i ho mirem de seguida."
+
+legal:
+  meta_title: "Avís legal | ABneteja"
+  eyebrow:    "Informació legal"
+  titol:      "Avís legal"
+
+privacitat:
+  meta_title: "Política de privacitat | ABneteja"
+  eyebrow:    "Informació legal"
+  titol:      "Política de privacitat"

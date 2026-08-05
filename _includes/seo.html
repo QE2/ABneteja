@@ -1,0 +1,29 @@
+{%- assign E = site.data.empresa -%}
+{%- assign municipis = site.data.zones.nucli | concat: site.data.zones.extensa -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": {{ E.nom | jsonify }},
+  "url": "{{ site.url }}/",
+  "email": {{ E.email | jsonify }},
+  "telephone": {{ E.telefon_tel | jsonify }},
+  "image": "{{ site.url }}/assets/img/logo-abneteja.png",
+  "logo": "{{ site.url }}/assets/img/logo-abneteja.png",
+  "description": {{ site.description | jsonify }},
+  "knowsLanguage": ["ca", "es"],
+  "areaServed": [
+    {%- for m in municipis %}
+    { "@type": "City", "name": {{ m | jsonify }} }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ],
+  "makesOffer": [
+    {%- for s in site.data.serveis %}
+    {
+      "@type": "Offer",
+      "itemOffered": { "@type": "Service", "name": {{ s.ca.nom | jsonify }} }
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}
+</script>

@@ -1,0 +1,675 @@
+/* ==========================================================================
+   ABneteja — full d'estil principal
+   Paleta i tipografia segons el manual de marca.
+   Ordre: tipografies · variables · base · utilitats · components · responsiu
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tipografies autoallotjades
+   Descarregar els .woff2 a /assets/fonts/ (PT Sans Narrow i Montserrat, OFL).
+   Autoallotjar-les evita la crida a Google Fonts i el problema d'RGPD que
+   això comporta a la UE.
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "PT Sans Narrow";
+  src: url("/assets/fonts/pt-sans-narrow-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/montserrat-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/assets/fonts/montserrat-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   2. Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color */
+  --teal:        #235858;
+  --teal-fosc:   #1a4444;
+  --teal-fresc:  #DCEAE6;
+  --carboni:     #17302E;
+  --sorra:       #F5F3EF;
+  --blanc:       #FFFFFF;
+  --daurat:      #B8912F;
+  --carmi:       #A83232;
+  --plata:       #B7BFBB;
+
+  /* Tipografia */
+  --titols: "PT Sans Narrow", "Liberation Sans Narrow", "Arial Narrow", sans-serif;
+  --cos:    "Montserrat", "Liberation Sans", system-ui, sans-serif;
+
+  /* Ritme */
+  --ample:    68rem;
+  --marge:    clamp(1.25rem, 5vw, 2.5rem);
+  --seccio-y: clamp(3.5rem, 8vw, 6rem);
+
+  /* Detall */
+  --radi:   3px;
+  --fil:    1px solid var(--plata);
+  --ombra:  0 1px 2px rgba(23, 48, 46, .06), 0 8px 24px rgba(23, 48, 46, .05);
+}
+
+/* --------------------------------------------------------------------------
+   3. Base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--sorra);
+  color: var(--carboni);
+  font-family: var(--cos);
+  font-size: clamp(1rem, .97rem + .15vw, 1.0625rem);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+
+h1, h2, h3 {
+  font-family: var(--titols);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: .005em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { color: var(--teal-fosc); }
+
+img { max-width: 100%; height: auto; }
+
+:focus-visible {
+  outline: 3px solid var(--daurat);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Utilitats
+   -------------------------------------------------------------------------- */
+.embolcall {
+  width: min(100% - (var(--marge) * 2), var(--ample));
+  margin-inline: auto;
+}
+
+.visualment-ocult {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--teal);
+  color: var(--blanc);
+  padding: .75rem 1.25rem;
+}
+.skip:focus { left: 0; color: var(--blanc); }
+
+/* Etiqueta petita sobre els títols */
+.eyebrow {
+  font-family: var(--titols);
+  font-size: .875rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--daurat);
+  margin: 0 0 .75rem;
+}
+.eyebrow::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--daurat);
+  margin-top: .6rem;
+}
+
+/* Botons */
+.boto {
+  display: inline-block;
+  background: var(--teal);
+  color: var(--blanc);
+  font-family: var(--titols);
+  font-size: 1.125rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .8rem 1.6rem;
+  border: 2px solid var(--teal);
+  border-radius: var(--radi);
+  cursor: pointer;
+  transition: background .18s ease, border-color .18s ease;
+}
+.boto:hover { background: var(--teal-fosc); border-color: var(--teal-fosc); color: var(--blanc); }
+
+.boto--petit { font-size: 1rem; padding: .5rem 1rem; }
+
+.boto--clar {
+  background: var(--blanc);
+  color: var(--teal);
+  border-color: var(--blanc);
+}
+.boto--clar:hover { background: var(--teal-fresc); border-color: var(--teal-fresc); color: var(--teal-fosc); }
+
+.enllac-suau {
+  font-family: var(--titols);
+  font-size: 1.0625rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+/* --------------------------------------------------------------------------
+   5. Capçalera i navegació
+   -------------------------------------------------------------------------- */
+.capcalera {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--sorra);
+  border-bottom: var(--fil);
+}
+
+.capcalera__interior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: .75rem;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  text-decoration: none;
+  color: var(--teal);
+}
+.marca__logo { width: 40px; height: auto; }
+.marca__text { display: flex; flex-direction: column; line-height: 1.15; }
+.marca__nom {
+  font-family: var(--titols);
+  font-size: 1.5rem;
+  letter-spacing: .01em;
+}
+.marca__lema {
+  font-size: .6875rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--carboni);
+  opacity: .65;
+}
+
+.nav { display: flex; align-items: center; gap: 2rem; }
+.nav__llista {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__enllac {
+  font-family: var(--titols);
+  font-size: 1.0625rem;
+  letter-spacing: .03em;
+  color: var(--carboni);
+  text-decoration: none;
+  padding-block: .35rem;
+  border-bottom: 2px solid transparent;
+}
+.nav__enllac:hover { color: var(--teal); border-bottom-color: var(--plata); }
+.nav__enllac.is-actiu { color: var(--teal); border-bottom-color: var(--daurat); }
+
+.nav__accions { display: flex; align-items: center; gap: 1rem; }
+
+.idioma {
+  font-family: var(--titols);
+  font-size: .9375rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--carboni);
+  text-decoration: none;
+  padding: .3rem .55rem;
+  border: 1px solid var(--plata);
+  border-radius: var(--radi);
+}
+.idioma:hover { border-color: var(--teal); color: var(--teal); }
+
+.nav-toggle {
+  display: none;
+  width: 44px; height: 44px;
+  background: none;
+  border: 1px solid var(--plata);
+  border-radius: var(--radi);
+  cursor: pointer;
+}
+.nav-toggle__barres,
+.nav-toggle__barres::before,
+.nav-toggle__barres::after {
+  display: block;
+  width: 20px; height: 2px;
+  background: var(--carboni);
+  margin-inline: auto;
+  content: "";
+}
+.nav-toggle__barres::before { transform: translateY(-6px); }
+.nav-toggle__barres::after  { transform: translateY(4px); }
+
+/* --------------------------------------------------------------------------
+   6. Portades i seccions
+   -------------------------------------------------------------------------- */
+.hero {
+  background: var(--teal);
+  color: var(--sorra);
+  padding-block: clamp(3.5rem, 9vw, 6.5rem);
+}
+.hero__interior { max-width: 46rem; }
+.hero .eyebrow { color: var(--teal-fresc); }
+.hero .eyebrow::after { background: var(--daurat); }
+.hero__titol {
+  font-size: clamp(2.4rem, 1.6rem + 3.6vw, 4.25rem);
+  color: var(--blanc);
+}
+.hero__entradeta {
+  font-size: clamp(1.0625rem, 1rem + .4vw, 1.25rem);
+  margin-top: 1.25rem;
+  color: var(--teal-fresc);
+  max-width: 40rem;
+}
+.hero__accions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.75rem;
+  margin-top: 2rem;
+}
+.hero__accions .enllac-suau { color: var(--teal-fresc); }
+.hero__accions .enllac-suau:hover { color: var(--blanc); }
+
+.portada {
+  background: var(--teal-fresc);
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+  border-bottom: var(--fil);
+}
+.portada__titol { font-size: clamp(2rem, 1.5rem + 2.4vw, 3.25rem); color: var(--teal); }
+.portada__entradeta {
+  font-size: 1.125rem;
+  margin-top: 1rem;
+  max-width: 44rem;
+}
+.portada--curta { padding-block: clamp(2rem, 5vw, 3rem); }
+.portada--curta .boto { margin-top: 1.5rem; }
+
+.seccio { padding-block: var(--seccio-y); }
+.seccio--credencials { background: var(--blanc); border-bottom: var(--fil); }
+.seccio--proces { background: var(--blanc); border-block: var(--fil); }
+
+.seccio__titol {
+  font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+  color: var(--teal);
+}
+.seccio__entradeta {
+  margin-top: .75rem;
+  max-width: 44rem;
+}
+.seccio__titol + .seccio__entradeta + * { margin-top: 2.5rem; }
+.seccio__titol + * { margin-top: 1.5rem; }
+
+/* --------------------------------------------------------------------------
+   7. Credencials
+   -------------------------------------------------------------------------- */
+.credencials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+}
+.credencial { border-top: 3px solid var(--daurat); padding-top: 1.1rem; }
+.credencial__titol { font-size: 1.375rem; color: var(--teal); }
+.credencial__text { margin-top: .6rem; font-size: .9375rem; }
+
+/* --------------------------------------------------------------------------
+   8. Serveis
+   -------------------------------------------------------------------------- */
+.serveis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.25rem;
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+}
+.servei {
+  background: var(--blanc);
+  border: var(--fil);
+  border-left: 4px solid var(--teal);
+  border-radius: var(--radi);
+  padding: 1.5rem;
+}
+.servei__nom { font-size: 1.3125rem; color: var(--teal); }
+.servei__desc { margin-top: .6rem; font-size: .9375rem; }
+.serveis--complet { margin-top: 0; }
+
+/* --------------------------------------------------------------------------
+   9. Procés — element de signatura: el rastre
+   Els passos són una seqüència real, i per això van numerats i encadenats.
+   -------------------------------------------------------------------------- */
+.proces {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  position: relative;
+}
+.pas {
+  position: relative;
+  padding-left: 4.25rem;
+  padding-bottom: 2.25rem;
+}
+.pas:last-child { padding-bottom: 0; }
+/* el fil que enllaça els passos */
+.pas::before {
+  content: "";
+  position: absolute;
+  left: 1.4rem;
+  top: 2.8rem;
+  bottom: .25rem;
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--plata) 0 4px,
+    transparent 4px 9px
+  );
+}
+.pas:last-child::before { display: none; }
+.pas__num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--teal);
+  border-radius: 50%;
+  background: var(--sorra);
+  color: var(--teal);
+  font-family: var(--titols);
+  font-size: 1.375rem;
+}
+.seccio--proces .pas__num { background: var(--blanc); }
+.pas__titol { font-size: 1.3125rem; padding-top: .35rem; }
+.pas__text { margin-top: .4rem; font-size: .9375rem; max-width: 40rem; }
+
+/* --------------------------------------------------------------------------
+   10. Blocs de text i municipis
+   -------------------------------------------------------------------------- */
+.blocs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  gap: 2rem 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bloc { border-top: var(--fil); padding-top: 1.1rem; }
+.bloc__titol { font-size: 1.375rem; color: var(--teal); }
+.bloc__text { margin-top: .6rem; font-size: .9375rem; }
+
+.municipis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+.municipis li {
+  background: var(--blanc);
+  border: var(--fil);
+  border-radius: var(--radi);
+  padding: .35rem .75rem;
+  font-size: .875rem;
+}
+.municipis--destacats li {
+  background: var(--teal-fresc);
+  border-color: var(--teal-fresc);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   11. Prosa
+   -------------------------------------------------------------------------- */
+.prosa { max-width: 44rem; }
+.prosa h2 {
+  font-size: 1.5rem;
+  color: var(--teal);
+  margin-top: 2rem;
+}
+.prosa h2:first-child { margin-top: 0; }
+.prosa p, .prosa ul { margin-top: .75rem; }
+.prosa ul { padding-left: 1.2rem; }
+.prosa li { margin-bottom: .4rem; }
+.prosa--compacta { margin-top: 2.5rem; }
+.prosa--legal { font-size: .9375rem; }
+.nota {
+  border-left: 3px solid var(--plata);
+  padding-left: 1rem;
+  color: var(--carboni);
+  opacity: .8;
+  font-size: .9375rem;
+}
+
+/* --------------------------------------------------------------------------
+   12. Contacte i formulari
+   -------------------------------------------------------------------------- */
+.contacte {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.contacte__etiqueta {
+  font-family: var(--titols);
+  font-size: .8125rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--daurat);
+  margin: 1.5rem 0 .1rem;
+}
+.contacte__etiqueta:first-child { margin-top: 0; }
+.contacte__valor { font-size: 1.125rem; margin: 0; }
+
+.formulari {
+  background: var(--blanc);
+  border: var(--fil);
+  border-radius: var(--radi);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  box-shadow: var(--ombra);
+}
+
+.camp { margin: 0 0 1.1rem; }
+.camp label {
+  display: block;
+  font-family: var(--titols);
+  font-size: 1.0625rem;
+  letter-spacing: .02em;
+  margin-bottom: .3rem;
+}
+.camp input,
+.camp select,
+.camp textarea {
+  width: 100%;
+  font-family: var(--cos);
+  font-size: 1rem;
+  color: var(--carboni);
+  background: var(--sorra);
+  border: var(--fil);
+  border-radius: var(--radi);
+  padding: .65rem .75rem;
+}
+.camp input:focus,
+.camp select:focus,
+.camp textarea:focus {
+  background: var(--blanc);
+  border-color: var(--teal);
+}
+.camp textarea { resize: vertical; }
+
+.camp-parell {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0 1rem;
+}
+
+.camp--consent {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  margin-top: 1.5rem;
+}
+.camp--consent input { width: auto; margin-top: .35rem; flex: none; }
+.camp--consent label {
+  font-family: var(--cos);
+  font-size: .875rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.req { color: var(--carmi); }
+.parany { position: absolute; left: -9999px; }
+
+/* --------------------------------------------------------------------------
+   13. Franja de crida a l'acció
+   -------------------------------------------------------------------------- */
+.cta { background: var(--teal); color: var(--sorra); padding-block: clamp(2.5rem, 6vw, 4rem); }
+.cta__interior {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.cta__titol { font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem); color: var(--blanc); }
+.cta__text { margin-top: .6rem; max-width: 34rem; color: var(--teal-fresc); font-size: .9375rem; }
+.cta__accions { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; }
+.cta__tel {
+  font-family: var(--titols);
+  font-size: 1.0625rem;
+  letter-spacing: .03em;
+  color: var(--teal-fresc);
+}
+.cta__tel:hover { color: var(--blanc); }
+
+/* --------------------------------------------------------------------------
+   14. Peu
+   -------------------------------------------------------------------------- */
+.peu {
+  background: var(--carboni);
+  color: var(--plata);
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: .875rem;
+}
+.peu a { color: var(--teal-fresc); text-decoration: none; }
+.peu a:hover { color: var(--blanc); text-decoration: underline; }
+
+.peu__graella {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+}
+.peu__marca {
+  font-family: var(--titols);
+  font-size: 1.5rem;
+  color: var(--blanc);
+  margin: 0;
+}
+.peu__lema { margin-top: .4rem; max-width: 20rem; }
+.peu__titol {
+  font-family: var(--titols);
+  font-size: .8125rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--daurat);
+  margin: 0 0 .5rem;
+}
+.peu__llista { list-style: none; margin: 0; padding: 0; }
+.peu__llista li { margin-bottom: .3rem; }
+
+.peu__baix {
+  border-top: 1px solid rgba(183, 191, 187, .25);
+  padding-block: 1.25rem;
+  font-size: .8125rem;
+  opacity: .8;
+}
+
+/* --------------------------------------------------------------------------
+   15. Responsiu
+   -------------------------------------------------------------------------- */
+@media (max-width: 60rem) {
+  .contacte { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 52rem) {
+  .nav-toggle { display: block; }
+
+  .nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--sorra);
+    border-bottom: var(--fil);
+    padding: 1rem var(--marge) 1.5rem;
+  }
+  .nav.is-obert { display: flex; }
+
+  .nav__llista { flex-direction: column; align-items: stretch; gap: 0; }
+  .nav__llista li { border-bottom: var(--fil); }
+  .nav__enllac { display: block; padding: .8rem 0; border-bottom: none; }
+  .nav__enllac.is-actiu { border-bottom: none; }
+
+  .nav__accions { margin-top: 1.25rem; justify-content: space-between; }
+
+  .marca__lema { display: none; }
+}
