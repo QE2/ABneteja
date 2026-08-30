@@ -12,7 +12,7 @@ comarca:      "Baix Llobregat"
 provincia:    "Barcelona"
 
 # Formspree: substituir XXXXXXXX per l'ID del formulari
-formspree_id: "https://formspree.io/f/xjyvknry"
+formspree_id: "xjyvknry"
 
 # Perfils externs (deixar buit si encara no existeix)
 google_business: ""
