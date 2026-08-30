@@ -5,14 +5,14 @@ nom:          "ABneteja"
 nom_legal:    "ABneteja"          # ← ajustar quan canviï la forma jurídica
 nif:          "X9750536P"         # ← obligatori a l'avís legal (LSSI-CE art. 10)
 email:        "info@abneteja.com"
-telefon:      "615 45 56 67"       # ← PENDENT: posar el número real
+telefon:      "615 45 56 67"       # ←
 telefon_tel:  "+34615455667"      # ← format per a l'enllaç tel:
 poblacio:     "Molins de Rei"
 comarca:      "Baix Llobregat"
 provincia:    "Barcelona"
 
 # Formspree: substituir XXXXXXXX per l'ID del formulari
-formspree_id: "XXXXXXXX"
+formspree_id: "https://formspree.io/f/xjyvknry"
 
 # Perfils externs (deixar buit si encara no existeix)
 google_business: ""
