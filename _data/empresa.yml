@@ -7,14 +7,13 @@
 nom:          "ABneteja"
 nom_legal:    "ABneteja"          # ← ajustar quan canviï la forma jurídica
 nif:          "X9750536P"         # ← obligatori a l'avís legal (LSSI-CE art. 10)
-email_cod:        "bW9jLmFqZXRlbmJhQG9mbmk="   # info@abneteja.com
-telefon_cod:      "NzYgNjUgNTQgNTE2"           # 615 45 56 67
-telefon_tel_cod:  "NzY2NTU0NTE2NDMr"           # +34615455667
+email_cod:        "bW9jLmFqZXRlbmJhQG9mbmk="
+telefon_cod:      "NzYgNjUgNTQgNTE2"
+telefon_tel_cod:  "NzY2NTU0NTE2NDMr"
 poblacio:     "Molins de Rei"
 comarca:      "Baix Llobregat"
 provincia:    "Barcelona"
 
-# Formspree: substituir XXXXXXXX per l'ID del formulari
 formspree_id: "xjyvknry"
 
 # Perfils externs (deixar buit si encara no existeix)
