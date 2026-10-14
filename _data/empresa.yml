@@ -1,12 +1,15 @@
 # Font única de veritat per a totes les dades de contacte i identitat.
 # Canviar aquí, es propaga a tot el lloc.
+# Email i telèfon codificats (invertits + Base64) per evitar bots.
+# Per generar un valor nou, a la consola del navegador:
+#   btoa('valor'.split('').reverse().join(''))
 
 nom:          "ABneteja"
 nom_legal:    "ABneteja"          # ← ajustar quan canviï la forma jurídica
 nif:          "X9750536P"         # ← obligatori a l'avís legal (LSSI-CE art. 10)
-email:        "info@abneteja.com"
-telefon:      "615 45 56 67"       # ←
-telefon_tel:  "+34615455667"      # ← format per a l'enllaç tel:
+email_cod:        "bW9jLmFqZXRlbmJhQG9mbmk="   # info@abneteja.com
+telefon_cod:      "NzYgNjUgNTQgNTE2"           # 615 45 56 67
+telefon_tel_cod:  "NzY2NTU0NTE2NDMr"           # +34615455667
 poblacio:     "Molins de Rei"
 comarca:      "Baix Llobregat"
 provincia:    "Barcelona"
