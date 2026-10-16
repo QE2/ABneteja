@@ -13,8 +13,8 @@
     <div class="peu__bloc">
       <p class="peu__titol">{{ L.nav.contacte }}</p>
       <ul class="peu__llista">
-        <li><a href="mailto:{{ E.email }}">{{ E.email }}</a></li>
-        <li><a href="tel:{{ E.telefon_tel }}">{{ E.telefon }}</a></li>
+        <li>{% include contacte.html tipus="mail" %}</li>
+        <li>{% include contacte.html tipus="tel" %}</li>
       </ul>
     </div>
 
