@@ -1,6 +1,6 @@
 {%- assign e = site.data.empresa -%}
 {%- if include.tipus == "tel" -%}
-<a href="#" class="js-contacte" data-tipus="tel" data-v="{{ e.telefon_tel_cod }}" data-t="{{ e.telefon_cod }}" rel="nofollow">Mostra el telèfon</a>
+<a href="#" class="js-contacte" data-tipus="tel" data-v="{{ e.telefon_tel_cod }}" data-t="{{ e.telefon_cod }}" rel="nofollow">{% if page.lang == 'es' %}Mostrar teléfono{% else %}Mostra el telèfon{% endif %}</a>
 {%- else -%}
-<a href="#" class="js-contacte" data-tipus="mail" data-v="{{ e.email_cod }}" data-t="{{ e.email_cod }}" rel="nofollow">Mostra el correu</a>
+<a href="#" class="js-contacte" data-tipus="mail" data-v="{{ e.email_cod }}" data-t="{{ e.email_cod }}" rel="nofollow">{% if page.lang == 'es' %}Mostrar email{% else %}Mostra el correu{% endif %}</a>
 {%- endif -%}
